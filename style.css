@@ -43,3 +43,16 @@ footer {
   font-size: 0.8em;
   color: #888;
 }
+
+/* Fade-in geral */
+body {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
