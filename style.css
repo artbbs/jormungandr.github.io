@@ -27,8 +27,28 @@ nav a {
   text-decoration: none;
 }
 
+nav a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #00ffff;
+  transition: width 0.3s ease;
+}
+
 nav a:hover {
-  text-decoration: underline;
+  color: #00ffff;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 main {
@@ -54,5 +74,18 @@ body {
 @keyframes fadeIn {
   to {
     opacity: 1;
+  }
+}
+
+header img {
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 5px #00ffff);
+  }
+  to {
+    filter: drop-shadow(0 0 15px #00ffff);
   }
 }
